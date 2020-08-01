@@ -14,7 +14,6 @@ The programme was developed using python 3.8 and its resources
 
 Algorithm
 The team used the  following steps to arrive at the solution for Nana
-
 1. Determine how much Nana is paid per hour per task
 2. Built an input function that requests for a task ID, task name and the name of client. This to help Nana easily reference tasks
 3. An input function tha requests for start time of a task
