@@ -6,14 +6,16 @@ client_name = input("Name of client: ")
 task_name = input("What is the name of this task?: ")
 started = input("When did "+task_name+" start? (YYYY-MM-DD HH:MM): ")
 datearr.append(started)
-end = input("When did "+task_name+" end? (YYYY-MM-DD HH:MM): ")
-datearr.append(end)
+
+#end = input("When did "+task_name+" end? (YYYY-MM-DD HH:MM): ")
+now = datetime.now() #end time
+datearr.append(now)
 print("Amazing, let us process your payroll now!")
 format='%Y-%m-%d %H:%M'
 try:
     startdate = datetime.strptime(datearr[0], format ) #convert string to datetime format
     #enddate = datetime.strptime(datearr[1], format)
-    enddate= datetime.strptime(datearr[1], format )
+    enddate= datearr[1]
     print ('So uhm ',startdate,'to ' , enddate," ")
     confirm = input("Did I get that right?Y/n: ")
     if confirm and confirm.lower()=="y":
