@@ -10,6 +10,7 @@ datearr.append(started)
 #end = input("When did "+task_name+" end? (YYYY-MM-DD HH:MM): ")
 now = datetime.now() #end time
 datearr.append(now)
+
 print("Amazing, let us process your payroll now!")
 format='%Y-%m-%d %H:%M'
 try:
@@ -26,6 +27,16 @@ try:
         print("Aww snap. Please run me again and start from the top")
 except Exception as e:
         print("Sorry but there was this issue with your entries!: "+e)
+
+#store output a in csv file
+import pandas as pd
+mydata={'client name': [client_name],'task name': [task_name], 'working hours':[timediff], 'wages':[wages]}
+mydataset=pd.DataFrame(mydata, columns=['client name','task name', 'working hours', 'wages'])
+print(mydataset)
+mydataset.to_csv('Time_tracking.csv', sep='\t', mode='a', header=None)
+
+
+
 
 
 
