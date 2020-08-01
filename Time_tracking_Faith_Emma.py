@@ -28,5 +28,15 @@ except Exception as e:
         print("Sorry but there was this issue with your entries!: "+e)
 
 
+#store output a in csv file
+import pandas as pd
+mydata={'client name': [client_name],'task name': [task_name], 'working hours':[timediff], 'wages':[wages]}
+mydataset=pd.DataFrame(mydata, columns=['client name','task name', 'working hours', 'wages'])
+print(mydataset)
+mydataset.to_csv('Time_tracking.csv', sep='\t', mode='a', header=None)
+
+
+
+
 
 
